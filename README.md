@@ -16,11 +16,27 @@ The tests used these builds/versions
 * web (PHP7-Apache + Postgres Client Support)
 * db (Postgres)
 
-#### Run
+#### Code
+
+Please place your code at
+
+```shell
+postgres/src
+```
+
+#### Building
 
 ```shell
 cd postgres
 docker-compose pull
 docker-compose build
 docker-compose up -d
+```
+
+#### Run
+
+You can access your PHP scripts at
+
+```shell
+https://localhost/<script_file_name>.php
 ```
