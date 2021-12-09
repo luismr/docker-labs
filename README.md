@@ -9,7 +9,7 @@ The tests used these builds/versions
 
 ## Stacks
 
-### Postgres
+### postgres-php7
 
 #### Containers
 
@@ -21,13 +21,13 @@ The tests used these builds/versions
 Please place your code at
 
 ```shell
-postgres/src
+postgres-php7/src
 ```
 
 #### Building
 
 ```shell
-cd postgres
+cd postgres-php7
 docker-compose pull
 docker-compose build
 docker-compose up -d
@@ -39,4 +39,37 @@ You can access your PHP scripts at
 
 ```shell
 https://localhost/<script_file_name>.php
+```
+
+### postgres-db
+
+#### Containers
+
+* db-admin (PGAdmin 4)
+* db (Postgres)
+
+#### Building
+
+```shell
+cd postgres-db
+docker-compose pull
+docker-compose build
+docker-compose up -d
+```
+
+#### Run
+
+##### db-admin
+
+```shell
+https://localhost:5433/
+```
+
+##### db
+
+```
+hostname ..: localhost
+port ......: 5432
+username ..: postgres
+password ..: devdev
 ```
