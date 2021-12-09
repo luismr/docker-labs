@@ -1,0 +1,27 @@
+version: '3.1'
+services:
+  db-admin:
+    build:
+      context: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@email.com
+      PGADMIN_DEFAULT_PASSWORD: devdev
+    ports:
+      - "5433:80"
+    depends_on:
+      - db
+
+
+  db:
+    image: postgres:9.6.1
+    volumes:
+      - db_data:/var/lib/postgres/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: devdev
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+
+volumes:
+  db_data:
